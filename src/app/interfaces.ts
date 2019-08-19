@@ -26,7 +26,7 @@ export interface Address{
     zip: String;
 }
 
-export interface Achnowledgmenet{
+export interface Achnowledgement{
     timestamp: Date;
     user: String;
     note: String;

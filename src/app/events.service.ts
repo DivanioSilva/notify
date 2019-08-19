@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { EventResponse, Achnowledgmenet} from './interfaces';
+import { EventResponse, Achnowledgement} from './interfaces';
 import { HttpClient} from '@angular/common/http';
-import { Observable, Observer, onErrorResumeNext} from 'rxjs';
+import { Observable, Observer} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
-  private endpoint = `https://us-central1-ps-notify-api.cloudfunctions.net/api`;
+  private endpoint = 'https://us-central1-ps-notify-api.cloudfunctions.net/api';
 
   constructor(private http: HttpClient){}
 
@@ -44,7 +44,7 @@ export class EventsService {
       return this.getByRouter(route);
   }
 
-  getAcknowledgements(event: EventResponse): Observable<Achnowledgmenet[]>{
-      return this.getByRouter<Achnowledgmenet[]>(event.links.acknowledgements);
+  getAcknowledgements(event: EventResponse): Observable<Achnowledgement[]>{
+      return this.getByRouter<Achnowledgement[]>(event.links.acknowledgements);
   }
 }
