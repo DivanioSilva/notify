@@ -17,7 +17,7 @@ export class EventsService {
       const self = this;
       self.getLatest().subscribe( res => onNext(res), observer.error);
 
-      funcion onNext(response: EventResponse){
+      function onNext(response: EventResponse){
         observer.next(response);
         if(response.links.next){
           self.getByRouter<EventResponse>(response.links.next).subscribe(res => onNext(res), observer.error);
