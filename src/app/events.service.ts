@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EventResponse, Achnowledgement} from './interfaces';
+import { EventResponse, Acknowledgement} from './interfaces';
 import { HttpClient} from '@angular/common/http';
 import { Observable, Observer} from 'rxjs';
 
@@ -39,12 +39,12 @@ export class EventsService {
       return this.getByRouter(route);
   }
 
-  getById(id: number): Observable<EventResponse>{
+  getById(id: Number): Observable<EventResponse>{
       const route = `/event/${id}`;
       return this.getByRouter(route);
   }
 
-  getAcknowledgements(event: EventResponse): Observable<Achnowledgement[]>{
-      return this.getByRouter<Achnowledgement[]>(event.links.acknowledgements);
+  getAcknowledgements(event: EventResponse): Observable<Acknowledgement[]>{
+      return this.getByRouter<Acknowledgement[]>(event.links.acknowledgements);
   }
 }
