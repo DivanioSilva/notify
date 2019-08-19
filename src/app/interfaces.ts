@@ -1,5 +1,3 @@
-import { Address } from 'cluster';
-
 export interface EventResponse{
     event: EmergencyEvent;
     links: Links;
