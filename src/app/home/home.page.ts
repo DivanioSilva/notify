@@ -14,7 +14,6 @@ export class HomePage implements OnInit, OnDestroy {
   sub: Subscription;
 
   constructor(private eventService: EventsService, private nav: NavController) {
-
   }
 
   ngOnInit(): void {
@@ -30,6 +29,6 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   details(response: EventResponse) {
-    this.nav.navigateForward('/details/${response.event.id}');
+    this.nav.navigateForward(`/details/${response.event.id}`);
   }
 }

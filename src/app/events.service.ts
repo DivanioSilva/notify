@@ -7,7 +7,7 @@ import { Observable, Observer, onErrorResumeNext} from 'rxjs';
   providedIn: 'root'
 })
 export class EventsService {
-  private endpoint = 'https://us-central1-ps-notify-api.cloudfunctions.net/api';
+  private endpoint = `https://us-central1-ps-notify-api.cloudfunctions.net/api`;
 
   constructor(private http: HttpClient){}
 
@@ -30,17 +30,17 @@ export class EventsService {
   }
 
   private getByRouter<T>(router: String): Observable<T>{
-      const url = '${this.endpoint}${route}';
+      const url = `${this.endpoint}${router}`;
       return this.http.get<T>(url);
   }
 
   getLatest(): Observable<EventResponse>{
-      const route = '/latest';
+      const route = `/latest`;
       return this.getByRouter(route);
   }
 
   getById(id: number): Observable<EventResponse>{
-      const route = '/event/${id}';
+      const route = `/event/${id}`;
       return this.getByRouter(route);
   }
 
