@@ -10,7 +10,14 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let e of getEvents()" size-xs="12" size-sm="6" size-md="4" size-lg="3" size-xl="2">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>
+              {{e.event.created | date:'short'}}
+            </ion-card-subtitle>
+          </ion-card-header>
 
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

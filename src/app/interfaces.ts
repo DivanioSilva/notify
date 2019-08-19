@@ -2,7 +2,7 @@ import { Address } from 'cluster';
 
 export interface EventResponse{
     event: EmergencyEvent;
-    links: LinkStyle;
+    links: Links;
 }
 
 export interface EmergencyEvent{

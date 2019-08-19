@@ -31,7 +31,7 @@ export class EventsService {
 
   private getByRouter<T>(router: String): Observable<T>{
       const url = '${this.endpoint}${route}';
-      return this.http.get<T>;
+      return this.http.get<T>(url);
   }
 
   getLatest(): Observable<EventResponse>{
