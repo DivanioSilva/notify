@@ -3,6 +3,7 @@ import { EventResponse } from '../interfaces';
 import { Subscription } from 'rxjs';
 import { EventsService } from '../events.service';
 import { NavController } from '@ionic/angular';
+import { Network } from '@ngx-pwa/offline';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,9 @@ import { NavController } from '@ionic/angular';
 export class HomePage implements OnInit, OnDestroy {
   events: EventResponse[] = [];
   sub: Subscription;
+  online$ = this.network.onlineChanges;
 
-  constructor(private eventService: EventsService, private nav: NavController) {
+  constructor(private eventService: EventsService, private nav: NavController, private network: Network) {
   }
 
   ngOnInit(): void {
